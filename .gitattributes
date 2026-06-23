@@ -1,0 +1,4 @@
+# Reproducibility-first repo: do NOT translate line endings on checkout.
+# verify.sh's SHA-256 hashes are computed against the exact bytes committed.
+# Treating every file as binary preserves those bytes across Windows / macOS / Linux.
+* -text

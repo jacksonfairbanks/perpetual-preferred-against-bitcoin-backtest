@@ -1,0 +1,21 @@
+# Large regenerable archival CSVs — exceed GitHub's 100 MB per-file limit.
+# Documented in verify.sh; regenerate with `node scripts/export.js`.
+outputs/bcr_paths_daily.csv
+outputs/daily/bcr_paths_daily.csv
+
+# Python cache.
+__pycache__/
+*.pyc
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Node (the repo has zero npm dependencies, but in case a contributor adds tooling)
+node_modules/
+npm-debug.log
+.npm/
