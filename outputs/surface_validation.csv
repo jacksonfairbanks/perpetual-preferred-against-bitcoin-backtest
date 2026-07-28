@@ -1,0 +1,5 @@
+regime,drawdown_fraction,duration_days,historical_required_starting_bcr,synthetic_required_starting_bcr,delta_bcr,abs_delta_bcr,in_pool
+apr_2013,0.7103056768558952,210,4,4,0,0,false
+mtgox_2014,0.848577738515901,1182,11,11.4,0.4,0.4,true
+ico_2018,0.834293493046095,1080,10.5,10.3,-0.2,0.2,true
+fed_2022,0.7666336091416391,847,7.6,7.1,-0.5,0.5,true
