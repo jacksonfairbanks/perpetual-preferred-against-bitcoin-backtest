@@ -1,0 +1,18 @@
+{
+  "title": "Perpetual Preferred Against Bitcoin Backtest",
+  "upload_type": "software",
+  "license": "MIT",
+  "language": "eng",
+  "creators": [
+    {"name": "Fairbanks, Jackson", "affiliation": "Strive, Inc."}
+  ],
+  "keywords": ["Bitcoin Coverage Ratio (BCR)", "perpetual preferred equity",
+    "Bitcoin treasury", "Bitcoin", "credit risk", "solvency",
+    "coverage ratio", "drawdown", "backtesting", "quantitative finance"],
+  "related_identifiers": [
+    {"identifier": "10.2139/ssrn.7201678", "relation": "isSupplementTo",
+     "scheme": "doi", "resource_type": "publication-preprint"}
+  ],
+  "notes": "If you use this repository, please cite the paper: Fairbanks (2026), Perpetual Preferred Equity Against Bitcoin: Required Coverage Across Observed Drawdowns. DOI 10.2139/ssrn.7201678.",
+  "description": "<p>Replication artifact for the paper \"Perpetual Preferred Equity Against Bitcoin: Required Coverage Across Observed Drawdowns\" (Fairbanks, 2026). Paper: https://ssrn.com/abstract=7201678 (DOI: 10.2139/ssrn.7201678).</p><p>The paper measures the Bitcoin Coverage Ratio (BCR = BTC reserve value / annual dividend obligation) at which a stripped-model perpetual preferred issuer clears observed Bitcoin drawdowns across four real BTC drawdown regimes (April 2013, Mt. Gox 2014, ICO Unwind 2018, Fed Tightening 2022), a 2011 supplementary regime, and a bundled COVID 2020 reference regime, sweeping 245 starting-BCR values per regime at 0.1x resolution.</p><p>This repository bundles the canonical solvency engine, the export pipeline, the two raw price sources, and the published output CSVs.</p><p>License: MIT applies to code and data. The paper text included in this archive is copyright 2026 Jackson Fairbanks, all rights reserved.</p>"
+}

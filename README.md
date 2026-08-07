@@ -9,7 +9,7 @@ License: MIT for the code and data in this repository (see `LICENSE`). The paper
 
 ## Paper
 
-**Perpetual Preferred Equity Against Bitcoin: Required Coverage Across Observed Drawdowns** — Jackson Fairbanks, Strive, Inc. Written July 29, 2026; posted August 7, 2026.
+**Perpetual Preferred Equity Against Bitcoin: Required Coverage Across Observed Drawdowns.** Jackson Fairbanks, Strive, Inc. Written July 29, 2026; posted August 7, 2026.
 
 - SSRN abstract page: <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7201678>
 - DOI: [10.2139/ssrn.7201678](https://doi.org/10.2139/ssrn.7201678)
