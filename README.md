@@ -1,5 +1,7 @@
 # Perpetual Preferred Against Bitcoin Backtest
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21840694.svg)](https://doi.org/10.5281/zenodo.21840694)
+
 Replication artifact for the paper **"Perpetual Preferred Equity Against Bitcoin: Required Coverage Across Observed Drawdowns"** (Jackson Fairbanks, 2026).
 
 Repository: https://github.com/jacksonfairbanks/perpetual-preferred-against-bitcoin-backtest
@@ -123,6 +125,8 @@ Fairbanks, Jackson, Perpetual Preferred Equity Against Bitcoin: Required Coverag
 ```
 
 SSRN: <https://ssrn.com/abstract=7201678> · DOI: [10.2139/ssrn.7201678](https://doi.org/10.2139/ssrn.7201678)
+
+Code and data archived at Zenodo: https://doi.org/10.5281/zenodo.21840694
 
 Machine-readable citation metadata: `CITATION.cff`.
 

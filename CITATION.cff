@@ -8,8 +8,12 @@ authors:
     affiliation: "Strive, Inc."
 repository-code: "https://github.com/jacksonfairbanks/perpetual-preferred-against-bitcoin-backtest"
 license: MIT
-version: 1.0.0
-date-released: "2026-07-28"
+version: 1.0.1
+date-released: "2026-08-07"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21840695"
+    description: "Zenodo archive of release v1.0.1"
 preferred-citation:
   type: article
   title: "Perpetual Preferred Equity Against Bitcoin: Required Coverage Across Observed Drawdowns"
