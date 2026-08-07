@@ -3,7 +3,17 @@
 Replication artifact for the paper **"Perpetual Preferred Equity Against Bitcoin: Required Coverage Across Observed Drawdowns"** (Jackson Fairbanks, 2026).
 
 Repository: https://github.com/jacksonfairbanks/perpetual-preferred-against-bitcoin-backtest
-License: MIT (see `LICENSE`)
+License: MIT for the code and data in this repository (see `LICENSE`). The paper text (`perpetual-preferred-equity-against-bitcoin-required-coverage.md`) is copyright © 2026 Jackson Fairbanks, all rights reserved, and is not covered by the MIT license.
+
+## Paper
+
+**Perpetual Preferred Equity Against Bitcoin: Required Coverage Across Observed Drawdowns** — Jackson Fairbanks, Strive, Inc. Written July 29, 2026; posted August 7, 2026.
+
+- SSRN abstract page: <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7201678>
+- DOI: [10.2139/ssrn.7201678](https://doi.org/10.2139/ssrn.7201678)
+- Paper text in this repository: [`perpetual-preferred-equity-against-bitcoin-required-coverage.md`](perpetual-preferred-equity-against-bitcoin-required-coverage.md)
+
+**Abstract.** Perpetual preferred equity issued against a Bitcoin reserve produces a forward-coverage problem. The measure of forward solvency is the Bitcoin Coverage Ratio (BCR): BTC reserve value over annual dividend obligation, in years of forward coverage. BCR collapses the preferred-to-reserve ratio and dividend rate into a single coverage statistic. Primary failure occurs at BCR<1x, where the reserve cannot cover one forward year of obligation. BCR is the sufficient parameter for forward solvency in the stripped pure-play model (no cash, no capital markets access, dividends funded entirely from BTC sales). The model is backtested across 245 starting BCR values per regime against four observed Bitcoin drawdowns: April 2013, Mt. Gox 2014, ICO Unwind 2018, and Fed Tightening 2022. Required starting BCRs for the three severe-depth multi-year regimes span 7.6x to 11.0x BCR. April 2013, the only short-duration regime, clears at materially lower coverage. These are stripped-model upper bounds. A real issuer with the optionality the model denies would clear the same regimes at lower coverage. Primary failure occurs well before the reserve is exhausted. Depth and duration both stress the structure, and their effects compound. The compounding depends on the drawdown's shape: the time spent at each depth, measured by the time-at-depth distribution. Across the regimes, the means of those distributions cluster tightly. Anchored on this clustering, a single coverage surface maps required starting BCR across depth and duration.
 
 ## What this is
 
@@ -46,7 +56,9 @@ Node 20+. Zero runtime dependencies. Windows: run `verify.sh` under Git Bash or 
 ```
 perpetual-preferred-against-bitcoin-backtest/
 ├── README.md                                this file
-├── LICENSE                                  MIT
+├── LICENSE                                  MIT (code and data only)
+├── CITATION.cff                             citation metadata (paper as preferred citation)
+├── perpetual-preferred-equity-against-bitcoin-required-coverage.md   the paper (all rights reserved)
 ├── REPRODUCE.md                             step-by-step replication
 ├── verify.sh                                hash verification script
 ├── bcr_3d_viewer.html                       interactive 3D coverage surface (Plotly, snapshot of outputs/surface_grid.csv; paper §6.6)
@@ -107,10 +119,12 @@ The full data dictionary, per-column definitions, and the rename history from ea
 ## Citation
 
 ```
-Fairbanks, J. (2026). Perpetual Preferred Equity Against Bitcoin:
-Required Coverage Across Observed Drawdowns.
-[Publisher / DOI / URL].
+Fairbanks, Jackson, Perpetual Preferred Equity Against Bitcoin: Required Coverage Across Observed Drawdowns (July 29, 2026). Available at SSRN: https://ssrn.com/abstract=7201678 or http://dx.doi.org/10.2139/ssrn.7201678
 ```
+
+SSRN: <https://ssrn.com/abstract=7201678> · DOI: [10.2139/ssrn.7201678](https://doi.org/10.2139/ssrn.7201678)
+
+Machine-readable citation metadata: `CITATION.cff`.
 
 ## Contact
 

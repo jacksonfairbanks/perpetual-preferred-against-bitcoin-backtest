@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the paper (preferred-citation below)."
+type: software
+title: "Perpetual Preferred Against Bitcoin Backtest"
+authors:
+  - family-names: Fairbanks
+    given-names: Jackson
+    affiliation: "Strive, Inc."
+repository-code: "https://github.com/jacksonfairbanks/perpetual-preferred-against-bitcoin-backtest"
+license: MIT
+version: 1.0.0
+date-released: "2026-07-28"
+preferred-citation:
+  type: article
+  title: "Perpetual Preferred Equity Against Bitcoin: Required Coverage Across Observed Drawdowns"
+  authors:
+    - family-names: Fairbanks
+      given-names: Jackson
+      affiliation: "Strive, Inc."
+  year: 2026
+  date-published: "2026-07-29"
+  doi: "10.2139/ssrn.7201678"
+  url: "https://ssrn.com/abstract=7201678"
