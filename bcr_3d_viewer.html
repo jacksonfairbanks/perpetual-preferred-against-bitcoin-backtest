@@ -54,7 +54,7 @@
 <body>
 <header>
   <h1>Interactive Coverage Surface — Fairbanks 2026 §6.6</h1>
-  <div class="sub">Depth and duration grid. Starting BCR to clear primary failure (BCR&lt;1x). Holds time-at-depth shape constant at pooled (&tau;, &sigma;) = (0.6799, 0.2073).</div>
+  <div class="sub">Depth and duration grid. Starting BCY to clear primary failure (BCY&lt;1). Holds time-at-depth shape constant at pooled (&tau;, &sigma;) = (0.6799, 0.2073).</div>
 </header>
 
 <section class="panel">
@@ -136,9 +136,9 @@ function buildSurface() {
     connectgaps: true,
     showscale: true,
     colorbar: {
-      title: { text: 'Starting BCR to clear', side: 'right', font: { color: '#1a1a1a', size: 12 } },
+      title: { text: 'Starting BCY to clear', side: 'right', font: { color: '#1a1a1a', size: 12 } },
       tickvals: [1, 5, 10, 15, 20, 25, 30, 35],
-      ticktext: ['1x','5x','10x','15x','20x','25x','30x','35x+'],
+      ticktext: ['1','5','10','15','20','25','30','35+'],
       tickfont: { color: '#1a1a1a', size: 11 },
       thickness: 12, outlinewidth: 0
     },
@@ -147,8 +147,8 @@ function buildSurface() {
     contours: {
       z: { show: true, usecolormap: false, color: 'rgba(255,255,255,0.25)', width: 0.5, start: 5, end: 30, size: 5 }
     },
-    hovertemplate: 'Depth %{y:.1f}%<br>Duration %{x:.1f} mo<br>BCR %{z:.1f}x<extra></extra>',
-    name: 'BCR surface'
+    hovertemplate: 'Depth %{y:.1f}%<br>Duration %{x:.1f} mo<br>BCY %{z:.1f}<extra></extra>',
+    name: 'BCY surface'
   };
 
   // Anchor spheres at EMPIRICAL z (a.bcr from anchors JSON).
@@ -163,7 +163,7 @@ function buildSurface() {
         symbol: 'circle'
       },
       name: LABELS[a.regime],
-      hovertemplate: LABELS[a.regime] + '<br>Depth %{y:.1f}%<br>Duration %{x:.1f} mo<br>BCR %{z:.1f}x<extra></extra>',
+      hovertemplate: LABELS[a.regime] + '<br>Depth %{y:.1f}%<br>Duration %{x:.1f} mo<br>BCY %{z:.1f}<extra></extra>',
       showlegend: true
     };
   });
@@ -185,7 +185,7 @@ function buildSurface() {
                tickvals: [20, 30, 40, 50, 60, 70, 80, 90],
                ticktext: ['20%','30%','40%','50%','60%','70%','80%','90%'],
                backgroundcolor: '#ffffff', showbackground: true, zeroline: false },
-      zaxis: { title: { text: 'Starting BCR to clear (years of coverage)', font: { color: AX_INK } },
+      zaxis: { title: { text: 'Starting BCY to clear', font: { color: AX_INK } },
                range: [0, 35], color: AX_INK, gridcolor: AX_GRID,
                backgroundcolor: '#ffffff', showbackground: true, zeroline: false },
       camera: PRIMARY_CAMERA,

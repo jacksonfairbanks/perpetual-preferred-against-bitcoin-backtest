@@ -15,11 +15,11 @@ License: MIT for the code and data in this repository (see `LICENSE`). The paper
 - DOI: [10.2139/ssrn.7201678](https://doi.org/10.2139/ssrn.7201678)
 - Paper text in this repository: [`perpetual-preferred-equity-against-bitcoin-required-coverage.md`](perpetual-preferred-equity-against-bitcoin-required-coverage.md)
 
-**Abstract.** Perpetual preferred equity issued against a Bitcoin reserve produces a forward-coverage problem. The measure of forward solvency is the Bitcoin Coverage Ratio (BCR): BTC reserve value over annual dividend obligation, in years of forward coverage. BCR collapses the preferred-to-reserve ratio and dividend rate into a single coverage statistic. Primary failure occurs at BCR<1x, where the reserve cannot cover one forward year of obligation. BCR is the sufficient parameter for forward solvency in the stripped pure-play model (no cash, no capital markets access, dividends funded entirely from BTC sales). The model is backtested across 245 starting BCR values per regime against four observed Bitcoin drawdowns: April 2013, Mt. Gox 2014, ICO Unwind 2018, and Fed Tightening 2022. Required starting BCRs for the three severe-depth multi-year regimes span 7.6x to 11.0x BCR. April 2013, the only short-duration regime, clears at materially lower coverage. These are stripped-model upper bounds. A real issuer with the optionality the model denies would clear the same regimes at lower coverage. Primary failure occurs well before the reserve is exhausted. Depth and duration both stress the structure, and their effects compound. The compounding depends on the drawdown's shape: the time spent at each depth, measured by the time-at-depth distribution. Across the regimes, the means of those distributions cluster tightly. Anchored on this clustering, a single coverage surface maps required starting BCR across depth and duration.
+**Abstract.** Perpetual preferred equity issued against a Bitcoin reserve produces a forward-coverage problem. The measure of forward solvency is Bitcoin Coverage Years (BCY): BTC reserve value over annual dividend obligation. BCY collapses the preferred-to-reserve ratio and dividend rate into a single coverage statistic. Primary failure occurs at BCY<1, where the reserve cannot cover one forward year of obligation. BCY is the sufficient parameter for forward solvency in the stripped pure-play model (no cash, no capital markets access, dividends funded entirely from BTC sales). The model is backtested across 245 starting BCY values per regime against four observed Bitcoin drawdowns: April 2013, Mt. Gox 2014, ICO Unwind 2018, and Fed Tightening 2022. Required starting BCY values for the three severe-depth multi-year regimes span 7.6 to 11.0 BCY. April 2013, the only short-duration regime, clears at materially lower coverage. These are stripped-model upper bounds. A real issuer with the optionality the model denies would clear the same regimes at lower coverage. Primary failure occurs well before the reserve is exhausted. Depth and duration both stress the structure, and their effects compound. The compounding depends on the drawdown's shape: the time spent at each depth, measured by the time-at-depth distribution. Across the regimes, the means of those distributions cluster tightly. Anchored on this clustering, a single coverage surface maps required starting BCY across depth and duration.
 
 ## What this is
 
-The paper measures the Bitcoin Coverage Ratio (BCR = BTC reserve value / annual dividend obligation) at which a stripped-model perpetual preferred issuer clears observed Bitcoin drawdowns. It applies the stripped model to four real BTC drawdown regimes (April 2013, Mt. Gox 2014, ICO Unwind 2018, Fed Tightening 2022) plus a 2011 supplementary regime and a bundled COVID 2020 reference regime (excluded from the paper's regime set), sweeps 245 starting-BCR values per regime, and records the required starting BCR for primary failure (BCR<1x) and for terminal liquidity at 0.1x resolution.
+The paper measures Bitcoin Coverage Years (BCY = BTC reserve value / annual dividend obligation) at which a stripped-model perpetual preferred issuer clears observed Bitcoin drawdowns. It applies the stripped model to four real BTC drawdown regimes (April 2013, Mt. Gox 2014, ICO Unwind 2018, Fed Tightening 2022) plus a 2011 supplementary regime and a bundled COVID 2020 reference regime (excluded from the paper's regime set), sweeps 245 starting-BCY values per regime, and records the required starting BCY for primary failure (BCY<1) and for terminal liquidity at 0.1 BCY resolution.
 
 This repository bundles everything needed to reproduce the paper's data export: the canonical solvency engine, the export pipeline, the two raw price sources, and the published output CSVs.
 
@@ -65,14 +65,14 @@ perpetual-preferred-against-bitcoin-backtest/
 ├── verify.sh                                hash verification script
 ├── bcr_3d_viewer.html                       interactive 3D coverage surface (Plotly, snapshot of outputs/surface_grid.csv; paper §6.6)
 ├── src/
-│   └── solvency-engine.js                   canonical BCR backtest engine
+│   └── solvency-engine.js                   canonical BCY backtest engine
 ├── scripts/
 │   ├── README.md                            script catalog (canonical chain + figure-data scripts)
 │   ├── preprocess-bitstamp.js               canonical step 1: LOCF imputation for the raw Bitstamp series
 │   ├── export.js                            canonical step 2: sweep runner; emits all output CSVs
 │   ├── build-surface.js                     canonical step 3: pooled (τ, σ) + symmetric (p, q) coverage surface
 │   ├── build-surface-grid-validation.js     canonical step 4: §6.6.2 body comparison (grid calendar start, 2017-12-16)
-│   ├── derive-mech-chart-data.js            figure-data: per-scenario min mechanical BCR for Figures 2 + B1
+│   ├── derive-mech-chart-data.js            figure-data: per-scenario min mechanical BCY for Figures 2 + B1
 │   ├── bake-viewer.js                       regenerates bcr_3d_viewer.html from outputs/surface_grid.csv
 │   └── lib/                                 pipeline helpers (engine loader, runner, aggregator, …)
 ├── figures/                                 paper-cited canonical PNGs (fig01–fig07, figB1, figB2)
@@ -85,11 +85,11 @@ perpetual-preferred-against-bitcoin-backtest/
 │       └── bitstamp_btc_prices.csv         raw Bitstamp export (5,311 rows; preprocessor input)
 └── outputs/
     ├── manifest.json                        full methodology, hashes, schema (monthly cadence)
-    ├── regime_summary.csv                   one row per (regime, starting BCR), the headline
-    ├── regime_descriptors.csv               one row per regime: peak/trough/recovery dates and required-BCR brackets
+    ├── regime_summary.csv                   one row per (regime, starting BCY), the headline
+    ├── regime_descriptors.csv               one row per regime: peak/trough/recovery dates and required-BCY brackets
     ├── bcr_paths_monthly.csv                month-end + event-day path snapshots
     ├── transition_paths_monthly.csv         transition-zone scenarios for path-shape inspection
-    ├── min_bcr_chart_data_mech.csv          per-scenario min mechanical-continuation BCR (Figures 2 + B1)
+    ├── min_bcr_chart_data_mech.csv          per-scenario min mechanical-continuation BCY (Figures 2 + B1)
     ├── regime_tau_sigma.csv                 per-regime (τ, σ) + pool_n3 row (population std, ddof=0)
     ├── time_at_depth_distributions.csv      depth-normalized drawdown trajectory per regime-day
     ├── surface_grid.csv                     961-cell coverage surface (depth × duration)

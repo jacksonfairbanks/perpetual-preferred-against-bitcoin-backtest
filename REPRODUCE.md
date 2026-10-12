@@ -34,7 +34,7 @@ This is the paper's canonical chain. Each step depends on the prior step's outpu
 - `data/btc-prices-bitstamp.csv`
 - `data/btc-prices-bitstamp-imputation.json`
 
-**Step 2b — export.js.** Sweeps 245 starting BCR values per regime across the four main regimes, the 2011 supplementary, and a bundled COVID 2020 reference regime (excluded from the paper's regime set). Six regimes at 245 values each. Reads `data/btc-prices-bitstamp.csv` and `data/btc-prices-coinmetrics.csv`. Writes:
+**Step 2b — export.js.** Sweeps 245 starting BCY values per regime across the four main regimes, the 2011 supplementary, and a bundled COVID 2020 reference regime (excluded from the paper's regime set). Six regimes at 245 values each. Reads `data/btc-prices-bitstamp.csv` and `data/btc-prices-coinmetrics.csv`. Writes:
 
 - `outputs/manifest.json`
 - `outputs/regime_summary.csv` (1,470 rows)
@@ -43,14 +43,14 @@ This is the paper's canonical chain. Each step depends on the prior step's outpu
 - `outputs/bcr_paths_daily.csv` (~1.3 M rows, ~750 MB)
 - `outputs/transition_paths_monthly.csv` (~12 K rows)
 
-**Step 2c — build-surface.js.** Computes per-regime depth-normalized (τ, σ) (population std, ddof=0), pooled (τ, σ) over the three pool regimes (Mt. Gox 2014, ICO Unwind 2018, Fed Tightening 2022), fits the symmetric two-parameter (p, q) family at every (depth, duration) cell, validates against the four observed regimes (gate: max |Δ BCR| ≤ 0.5x), and writes the surface. Merges its outputs into the existing `manifest.json` (no overwrite of `code_version`). Writes:
+**Step 2c — build-surface.js.** Computes per-regime depth-normalized (τ, σ) (population std, ddof=0), pooled (τ, σ) over the three pool regimes (Mt. Gox 2014, ICO Unwind 2018, Fed Tightening 2022), fits the symmetric two-parameter (p, q) family at every (depth, duration) cell, validates against the four observed regimes (gate: max |Δ BCY| ≤ 0.5), and writes the surface. Merges its outputs into the existing `manifest.json` (no overwrite of `code_version`). Writes:
 
 - `outputs/regime_tau_sigma.csv`
 - `outputs/time_at_depth_distributions.csv`
 - `outputs/surface_validation.csv` (per-regime peak-date calendar start; retained as a calendar-sensitivity check)
 - `outputs/surface_grid.csv` (961 cells, grid calendar start 2017-12-16)
 
-**Step 2d — build-surface-grid-validation.js.** Recomputes the four-regime synthetic required starting BCRs under the grid calendar start (2017-12-16, ICO Unwind 2018 peak, in-pool median across the three pool regimes) so payment-day cadence is deterministic and matches the surface_grid cells displayed in Figures 6 and 7. This is the §6.6.2 body comparison; the prior step's `surface_validation.csv` (per-regime peak-date calendar start) is retained as the calendar-sensitivity companion. Pooled (τ, σ) and the (depth, duration) coordinates are read from the prior step's manifest and CSVs; the surface itself is not rebuilt. The manifest is read, not modified — the `phase_2` schema is deliberately frozen after step 2c. Writes:
+**Step 2d — build-surface-grid-validation.js.** Recomputes the four-regime synthetic required starting BCY values under the grid calendar start (2017-12-16, ICO Unwind 2018 peak, in-pool median across the three pool regimes) so payment-day cadence is deterministic and matches the surface_grid cells displayed in Figures 6 and 7. This is the §6.6.2 body comparison; the prior step's `surface_validation.csv` (per-regime peak-date calendar start) is retained as the calendar-sensitivity companion. Pooled (τ, σ) and the (depth, duration) coordinates are read from the prior step's manifest and CSVs; the surface itself is not rebuilt. The manifest is read, not modified — the `phase_2` schema is deliberately frozen after step 2c. Writes:
 
 - `outputs/surface_grid_validation.csv` (4-row §6.6.2 body table)
 

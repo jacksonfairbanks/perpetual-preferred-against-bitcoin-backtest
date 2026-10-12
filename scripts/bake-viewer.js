@@ -66,7 +66,7 @@ function fmtDurationMo(x) {
     return String(r);
 }
 
-// Grid Z (BCR): 1-decimal fixed, or null. CSV already at 0.1 resolution.
+// Grid Z (BCY): 1-decimal fixed, or null. CSV already at 0.1 resolution.
 function fmtZ(x) {
     if (x === null) return 'null';
     return x.toFixed(1);
@@ -78,7 +78,7 @@ function fmtFull(x) {
     return String(x);
 }
 
-// Anchor BCR: 1-decimal fixed. 4 -> "4.0", 10.5 -> "10.5".
+// Anchor BCY: 1-decimal fixed. 4 -> "4.0", 10.5 -> "10.5".
 function fmtBcr(x) {
     return x.toFixed(1);
 }

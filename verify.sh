@@ -61,7 +61,7 @@ check() {
 echo "=== Bundled files (enforced) ==="
 
 # Paper text (SSRN: https://ssrn.com/abstract=7201678; rights notice in README)
-check df149d4cd07ff82576410360b76a07d86996c9a69cae9f0674d598f236759e67 perpetual-preferred-equity-against-bitcoin-required-coverage.md
+check 4ea9c66f7a17e893da9fdd90e8e36db94824d64629c3eb7c881dbb2ba0fcc44f perpetual-preferred-equity-against-bitcoin-required-coverage.md
 
 # Engine + scripts
 check e29e1d1e9621c85d8997389e20c1c6c727e4a2fa44abe33bdb6963ee6e4ff00e src/solvency-engine.js
@@ -78,10 +78,10 @@ check d4293ab598c2daeb27c97329de6af41c30b1f06136ca21127ec9bdd913aa906c scripts/l
 check 500cc725eb869fa9b67d9dcfe4d71744069c1e3d5341cfe232b646ee373986f2 scripts/derive-mech-chart-data.js
 check 78e95689fa66754f1d2a5404bb6c9f820877683045fd0632d6c3027a02ad0a96 scripts/build-surface.js
 check aa045068695357f3417dd47e2e3cc45f520885b9ce616d1c3cc8697a35d2ca1e scripts/build-surface-grid-validation.js
-check 6de7cd597a28978fffaef4f02c6c5eb9e52b986ddf17f4ce0bb7a9baa2091ce5 scripts/bake-viewer.js
+check 314b26806bc2e9f897614399bb5257d010fccb58d5505ab410b40b04bc0d5c61 scripts/bake-viewer.js
 
 # Interactive viewer (snapshot of outputs/surface_grid.csv; regenerable via scripts/bake-viewer.js)
-check 31804efe2c6f1b987dbcd3ea210610aa76db6ede067410d5105d16c77720a4e3 bcr_3d_viewer.html
+check 82ffad96db2f7ae00f6deac1526e277c711977582929b5ab32c1c2ced2d8c44b bcr_3d_viewer.html
 
 # Price sources (cited in paper Appendix C)
 check 978ad50a50bf22be09d9a18b1517202d71f15cea7bed46d93e445a3af1810146 data/btc-prices-bitstamp.csv

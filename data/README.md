@@ -17,7 +17,7 @@ Two BTC/USD daily-close series are used. The four main-results regimes (April 20
 
 - **Source:** Bitstamp (https://www.bitstamp.net/), the primary BTC/USD reference exchange for the 2013–present regimes.
 - **Acquisition:** Bitstamp daily-close close-only OHLC export. The raw export is checked in at `data/raw/bitstamp_btc_prices.csv` (5,311 trading days). The preprocessor (`scripts/preprocess-bitstamp.js`) applies last-observation-carried-forward imputation for the 33 calendar-day gaps in the raw series, 31 of them in 2011-08 / 2011-09 (early-exchange operating gaps) plus 2 isolated days in later years. Imputed days are flagged in `btc-prices-bitstamp-imputation.json`.
-- **Why imputation matters:** without LOCF, calendar-month-ends that fell on non-trading days would have no price, and the engine's monthly dividend payment would silently skip them. LOCF preserves the canonical historical timeline. Two month-ends (2011-08-31, 2011-09-30) are LOCF-imputed; their effect on the early-2011 required starting BCRs is documented in `outputs/manifest.json` → `reproducibility.price_sources.bitstamp.preprocessing`.
+- **Why imputation matters:** without LOCF, calendar-month-ends that fell on non-trading days would have no price, and the engine's monthly dividend payment would silently skip them. LOCF preserves the canonical historical timeline. Two month-ends (2011-08-31, 2011-09-30) are LOCF-imputed; their effect on the early-2011 required starting BCY values is documented in `outputs/manifest.json` → `reproducibility.price_sources.bitstamp.preprocessing`.
 - **Used by regimes:** `apr_2013`, `mtgox_2014`, `ico_2018`, `covid_2020`, `fed_2022`.
 
 ### CoinMetrics community reference rate
@@ -28,7 +28,7 @@ Two BTC/USD daily-close series are used. The four main-results regimes (April 20
 
 ## Licensing
 
-Reviewed before this artifact was assembled (May 2026); summary below. The paper's intended use is academic reproduction of derivative analyses (BCR ratios, required-BCR brackets, summary statistics), not redistribution of raw exchange data as a primary product.
+Reviewed before this artifact was assembled (May 2026); summary below. The paper's intended use is academic reproduction of derivative analyses (BCY values, required-BCY brackets, summary statistics), not redistribution of raw exchange data as a primary product.
 
 ### CoinMetrics
 
