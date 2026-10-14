@@ -2,6 +2,8 @@
 
 Two BTC/USD daily-close series are used. The four main-results regimes (April 2013, Mt. Gox 2014, ICO Unwind 2018, Fed Tightening 2022) run on Bitstamp; the supplementary 2011 regime (Appendix B) runs on CoinMetrics because Bitstamp data begins after the June 2011 peak.
 
+**Naming.** Column names, file names, and code identifiers use the lowercase token `bcr` for the paper's Bitcoin Coverage Years (BCY). The token is legacy and is kept so the v1.0.0 and v1.0.1 hashes and the paper's Appendix C references stay valid. Prose uses BCY.
+
 ## Files
 
 | Path | Source | Rows | Date range | SHA-256 |

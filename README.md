@@ -23,6 +23,8 @@ The paper measures Bitcoin Coverage Years (BCY = BTC reserve value / annual divi
 
 This repository bundles everything needed to reproduce the paper's data export: the canonical solvency engine, the export pipeline, the two raw price sources, and the published output CSVs.
 
+**Naming.** Column names, file names, and code identifiers use the lowercase token `bcr` for the paper's Bitcoin Coverage Years (BCY). The token is legacy and is kept so the v1.0.0 and v1.0.1 hashes and the paper's Appendix C references stay valid. Prose uses BCY.
+
 ## Quickstart
 
 ```
