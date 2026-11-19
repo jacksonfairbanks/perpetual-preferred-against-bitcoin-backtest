@@ -6,7 +6,7 @@ July 2026
 
 ### Abstract
 
-Perpetual preferred equity issued against a Bitcoin reserve produces a forward-coverage problem. The measure of forward solvency is Bitcoin Coverage Years (BCY): BTC reserve value over annual dividend obligation. BCY collapses the preferred-to-reserve ratio and dividend rate into a single coverage statistic. Primary failure occurs at BCY<1, where the reserve cannot cover one forward year of obligation. BCY is the sufficient parameter for forward solvency in the stripped pure-play model (no cash, no capital markets access, dividends funded entirely from BTC sales). The model is backtested across 245 starting BCY values per regime against four observed Bitcoin drawdowns: April 2013, Mt. Gox 2014, ICO Unwind 2018, and Fed Tightening 2022. Required starting BCY values for the three severe-depth multi-year regimes span 7.6 to 11.0 BCY. April 2013, the only short-duration regime, clears at materially lower coverage. These are stripped-model upper bounds. A real issuer with the optionality the model denies would clear the same regimes at lower coverage. Primary failure occurs well before the reserve is exhausted. Depth and duration both stress the structure, and their effects compound. The compounding depends on the drawdown's shape: the time spent at each depth, measured by the time-at-depth distribution. Across the regimes, the means of those distributions cluster tightly. Anchored on this clustering, a single coverage surface maps required starting BCY across depth and duration.
+Perpetual preferred equity issued against a Bitcoin reserve produces a forward-coverage problem. The measure of forward solvency is Bitcoin Coverage Years (BCY): BTC reserve value over annual dividend obligation. BCY collapses the preferred-to-reserve ratio and dividend rate into a single coverage statistic. Primary failure occurs at BCY<1, where the reserve cannot cover one forward year of obligation. BCY is the sufficient parameter for the failure conditions in the stripped pure-play model (no cash, no capital markets access, dividends funded entirely from BTC sales). The model is backtested across 245 starting BCY values per regime against four observed Bitcoin drawdowns: April 2013, Mt. Gox 2014, ICO Unwind 2018, and Fed Tightening 2022. Required starting BCY values for the three severe-depth multi-year regimes span 7.6 to 11.0 BCY. April 2013, the only short-duration regime, clears at materially lower coverage. These are stripped-model upper bounds. A real issuer with the optionality the model denies would clear the same regimes at lower coverage. Primary failure occurs well before the reserve is exhausted. Depth and duration both stress the structure, and their effects compound. The compounding depends on the drawdown's shape: the time spent at each depth, measured by the time-at-depth distribution. Across the regimes, the means of those distributions cluster tightly. Anchored on this clustering, a single coverage surface maps required starting BCY across depth and duration.
 
 ---
 
@@ -14,7 +14,7 @@ Perpetual preferred equity issued against a Bitcoin reserve produces a forward-c
 
 Perpetual preferred equity issued against a Bitcoin reserve produces a forward-coverage problem. The reserve must fund the dividend obligation across whatever Bitcoin price path materializes. This paper measures the starting coverage required to clear observed Bitcoin drawdowns.
 
-Bitcoin Coverage Years (BCY) is the BTC reserve value over the annual dividend obligation. It is the sufficient parameter for forward solvency in the stripped model. A backtest applies the stripped pure-play structure to four historical Bitcoin drawdowns, locates the minimum coverage that clears each regime, and measures the cost of clearing each.
+Bitcoin Coverage Years (BCY) is the BTC reserve value over the annual dividend obligation. It is the sufficient parameter for the failure conditions in the stripped model. A backtest applies the stripped pure-play structure to four historical Bitcoin drawdowns, locates the minimum coverage that clears each regime, and measures the cost of clearing each.
 
 The stripped model denies the issuer optionality by design. Cash, capital markets access, and further equity issuance are removed from the model. Dividend obligations are funded entirely through the sale of Bitcoin. The required starting BCY values are upper bounds.
 
@@ -26,7 +26,9 @@ The paper presents findings. It is not a comparison across specific issuers, not
 
 The preferred shares are perpetual: no maturity, no principal repayment. They are equity, not debt. The reserve is Bitcoin.
 
-The preferred carries a dividend obligation. Without a maturity event, solvency does not resolve at a single date. Solvency is a running condition.
+The preferred carries a dividend obligation. Without a maturity event, solvency does not resolve at a single date.[^fn-solvency] Solvency is a running condition.
+
+[^fn-solvency]: Solvency carries its going-concern sense throughout. The modeled issuer carries no debt, so the legal tests of insolvency do not apply, and a dividend is not a debt until declared.
 
 This paper measures the structure in its pure-play form. The pure-play issuer holds Bitcoin against the preferred outstanding. There is no operating business, no other assets, and no other liabilities.
 
@@ -44,7 +46,7 @@ BCY collapses the preferred-to-reserve ratio and dividend rate into a single cov
 
 The preferred-to-reserve ratio and dividend rate vary across issuers. At a given BCY, the obligations they produce do not.
 
-Coverage measured in BCY applies to any pure-play issuer of this structural form. In the stripped model, BCY is the sufficient parameter for forward solvency: the preferred-to-reserve ratio and dividend rate add no information beyond BCY.[^fn-bcr-identity]
+Coverage measured in BCY applies to any pure-play issuer of this structural form. In the stripped model, BCY is the sufficient parameter for the failure conditions: the preferred-to-reserve ratio and dividend rate add no information beyond BCY.[^fn-bcr-identity]
 
 BCY is invariant to scale. The same required starting BCY applies to a $1B issuer and a $100B issuer.
 
@@ -56,7 +58,7 @@ BCY is invariant to scale. The same required starting BCY applies to a $1B issue
 
 ## 4 &nbsp; Failure Definitions
 
-### 4.1 &nbsp; Primary Failure: Solvency (BCY < 1)
+### 4.1 &nbsp; Primary Failure: Coverage (BCY < 1)
 
 The primary failure condition is the first day on which
 

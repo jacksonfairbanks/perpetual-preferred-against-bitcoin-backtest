@@ -61,7 +61,7 @@ check() {
 echo "=== Bundled files (enforced) ==="
 
 # Paper text (SSRN: https://ssrn.com/abstract=7201678; rights notice in README)
-check 4ea9c66f7a17e893da9fdd90e8e36db94824d64629c3eb7c881dbb2ba0fcc44f perpetual-preferred-equity-against-bitcoin-required-coverage.md
+check 5ff990e3d0d2268dd56714034659cf1d69ae2adc05e1814d1107ced3cf8d5cb8 perpetual-preferred-equity-against-bitcoin-required-coverage.md
 
 # Engine + scripts
 check e29e1d1e9621c85d8997389e20c1c6c727e4a2fa44abe33bdb6963ee6e4ff00e src/solvency-engine.js
